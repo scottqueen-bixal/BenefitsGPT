@@ -7,7 +7,7 @@ import dev.langchain4j.service.AiServices;
 
 import static java.time.Duration.ofSeconds;
 
-public class MortgageChat {
+public class BenefitChat {
 
     private final ChatLanguageModel model;
 
@@ -17,7 +17,7 @@ public class MortgageChat {
 
     private final Assistant assistant;
 
-    public MortgageChat(String openAiApiKey) {
+    public BenefitChat(String openAiApiKey) {
         model = OpenAiChatModel.builder()
                 .apiKey(openAiApiKey)
                 .timeout(ofSeconds(60))
