@@ -2,23 +2,36 @@ package org.mfusco;
 
 import java.time.LocalDate;
 
-public record Person(String firstName, String lastName, LocalDate birthDate, int income)  {
+// Scott Queen born in the US in 1982. His wife died from COVID during the first year of the pandemic. He is caring for a child who was born a three years before his wife died. Scott paid for the funeral expenses, but never filed for reimbursement
+
+public record Person(String applicantFirstName, String applicantLastName, LocalDate applicantBirthDate, String applicantRelationshipToDeceased, String applicantMaritalStatus, Boolean applicantCitizenStatus, Boolean applicantCaringForChild, Boolean childDisabled, LocalDate childAge, Boolean paidFuneralExpenses, LocalDate deceasedDateOfDeath)  {
 
     @Override
     public String toString() {
         return "Person {" +
-                " firstName = \"" + firstName + "\"" +
-                ", lastName = \"" + lastName + "\"" +
-                ", birthDate = " + birthDate +
-                ", income = " + income +
+                " applicantFirstName = \"" + applicantFirstName + "\"" +
+                ", applicantLastName = \"" + applicantLastName + "\"" +
+                ", applicantBirthDate = " + applicantBirthDate +
+                ", applicantRelationshipToDeceased = " + applicantRelationshipToDeceased +
+                ", applicantMaritalStatus = " + applicantMaritalStatus +
+                ", applicantCitizenStatus = " + applicantCitizenStatus +
+                ", applicantCaringForChild = " + applicantCaringForChild +
+                ", childDisabled = " + childDisabled +
+                ", childAge = " + childAge +
+                ", applicantPaidFuneralExpenses = " + paidFuneralExpenses +
+                ", deceasedDateOfDeath = " + deceasedDateOfDeath +
                 " }";
     }
 
     public String getFullName() {
-        return firstName + " " + lastName;
+        return applicantFirstName + " " + applicantLastName;
     }
 
     public int getAge() {
-        return birthDate.until(LocalDate.now()).getYears();
+        return applicantBirthDate.until(LocalDate.now()).getYears();
+    }
+
+    public int getDeath() {
+        return deceasedDateOfDeath.until(LocalDate.now()).getYears();
     }
 }
