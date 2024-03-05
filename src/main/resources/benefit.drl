@@ -15,3 +15,9 @@ rule CheckDeath when
 then
 	answers.add("The deceased died more than one year ago");
 end
+
+// The deceased's death was COVID-19 related
+// The deceased died in the U.S.
+// The deceased died after May 20th, 2020
+// You are a U.S. citizen or eligible non-citizen
+// You paid for funeral or burial expenses and were not reimbursed
