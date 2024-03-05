@@ -10,8 +10,8 @@ then
 	answers.add($p.getFullName() + " is too young");
 end
 
-rule CheckIncome when
-	$p: Person( income < 100000 )
+rule CheckDeath when
+	$p: Person( death > 1 )
 then
-	answers.add($p.getFullName() + "'s income is too low");
+	answers.add("The deceased died more than one year ago");
 end
