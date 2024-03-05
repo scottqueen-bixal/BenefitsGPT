@@ -43,6 +43,6 @@ public class DroolsMortgageCalculator {
     }
 
     public void register(Person person) {
-        personsRegistry.put(person.firstName(), person);
+        personsRegistry.put(person.applicantFirstName(), person);
     }
 }
