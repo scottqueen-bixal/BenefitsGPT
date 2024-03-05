@@ -19,11 +19,11 @@ public class BenefitEligibilityCalculator {
     private final KieBase kieBase;
 
     public BenefitEligibilityCalculator() {
-        kieBase = new KieHelper().addFromClassPath("/mortgage.drl").build(ExecutableModelProject.class);
+        kieBase = new KieHelper().addFromClassPath("/benefit.drl").build(ExecutableModelProject.class);
     }
 
-    @Tool("Grant mortgage to {{name}}")
-    public String grantMortgage(@V("name") String name) {
+    @Tool("Apply benefit eligibility to {{name}}")
+    public String benefitEligibility(@V("name") String name) {
         Applicant applicant = applicantRegistry.get(name);
 
         if (applicant == null) {
@@ -37,9 +37,9 @@ public class BenefitEligibilityCalculator {
         kieSession.fireAllRules();
 
         if (answers.isEmpty()) {
-            return "Yes, mortgage can be granted";
+            return "Yes, the applicant is eligible.";
         }
-        return "Mortgage cannot be granted cannot be granted because " + answers;
+        return "The applicant is not eligible for the benefit because " + answers;
     }
 
     public void register(Applicant applicant) {
