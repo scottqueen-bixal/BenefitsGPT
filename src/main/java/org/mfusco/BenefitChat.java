@@ -11,7 +11,7 @@ public class BenefitChat {
 
     private final ChatLanguageModel model;
 
-    private final PersonExtractor extractor;
+    private final ApplicantExtractor extractor;
 
     private final DroolsMortgageCalculator droolsMortgageCalculator = new DroolsMortgageCalculator();
 
@@ -23,7 +23,7 @@ public class BenefitChat {
                 .timeout(ofSeconds(60))
                 .build();
 
-        extractor = AiServices.create(PersonExtractor.class, model);
+        extractor = AiServices.create(ApplicantExtractor.class, model);
 
         assistant = AiServices.builder(Assistant.class)
                 .chatLanguageModel(model)
@@ -33,12 +33,12 @@ public class BenefitChat {
     }
 
     public String chat(String text) {
-        return text.endsWith("?") ? assistant.chat(text) : extractPerson(text);
+        return text.endsWith("?") ? assistant.chat(text) : extractApplicant(text);
     }
 
-    private String extractPerson(String text) {
-        Person person = extractor.extractPersonFrom(text);
-        droolsMortgageCalculator.register(person);
-        return person.toString();
+    private String extractApplicant(String text) {
+        Applicant applicant = extractor.extractApplicantFrom(text);
+        droolsMortgageCalculator.register(applicant);
+        return applicant.toString();
     }
 }

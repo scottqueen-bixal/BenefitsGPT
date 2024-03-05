@@ -1,17 +1,17 @@
 package org.mfusco;
 
-import org.mfusco.Person
+import org.mfusco.Applicant
 
 global java.util.List answers;
 
 rule CheckAge when
-	$p: Person( age < 18 )
+	$p: Applicant( age < 18 )
 then
 	answers.add($p.getFullName() + " is too young");
 end
 
 rule CheckDeath when
-	$p: Person( death > 1 )
+	$p: Applicant( death > 1 )
 then
 	answers.add("The deceased died more than one year ago");
 end

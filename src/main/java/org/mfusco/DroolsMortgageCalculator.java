@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class DroolsMortgageCalculator {
 
-    private final Map<String, Person> personsRegistry = new HashMap<>();
+    private final Map<String, Applicant> applicantRegistry = new HashMap<>();
 
     private final KieBase kieBase;
 
@@ -24,16 +24,16 @@ public class DroolsMortgageCalculator {
 
     @Tool("Grant mortgage to {{name}}")
     public String grantMortgage(@V("name") String name) {
-        Person person = personsRegistry.get(name);
+        Applicant applicant = applicantRegistry.get(name);
 
-        if (person == null) {
-            return "Unknown person";
+        if (applicant == null) {
+            return "Unknown applicant";
         }
 
         KieSession kieSession = kieBase.newKieSession();
         List<String> answers = new ArrayList<>();
         kieSession.setGlobal("answers", answers);
-        kieSession.insert(person);
+        kieSession.insert(applicant);
         kieSession.fireAllRules();
 
         if (answers.isEmpty()) {
@@ -42,7 +42,7 @@ public class DroolsMortgageCalculator {
         return "Mortgage cannot be granted cannot be granted because " + answers;
     }
 
-    public void register(Person person) {
-        personsRegistry.put(person.applicantFirstName(), person);
+    public void register(Applicant applicant) {
+        applicantRegistry.put(applicant.applicantFirstName(), applicant);
     }
 }
