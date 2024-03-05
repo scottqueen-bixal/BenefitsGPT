@@ -19,7 +19,7 @@ public class BenefitEligibilityCalculator {
     private final KieBase kieBase;
 
     public BenefitEligibilityCalculator() {
-        kieBase = new KieHelper().addFromClassPath("/benefit.drl").build(ExecutableModelProject.class);
+        kieBase = new KieHelper().addFromClassPath("/covid-funeral-assistance.drl").build(ExecutableModelProject.class);
     }
 
     @Tool("Apply benefit eligibility to {{name}}")
