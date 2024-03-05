@@ -13,7 +13,7 @@ public class BenefitChat {
 
     private final ApplicantExtractor extractor;
 
-    private final DroolsMortgageCalculator droolsMortgageCalculator = new DroolsMortgageCalculator();
+    private final BenefitEligibilityCalculator benefitEligibilityCalculator = new BenefitEligibilityCalculator();
 
     private final Assistant assistant;
 
@@ -28,7 +28,7 @@ public class BenefitChat {
         assistant = AiServices.builder(Assistant.class)
                 .chatLanguageModel(model)
                 .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
-                .tools(droolsMortgageCalculator)
+                .tools(benefitEligibilityCalculator)
                 .build();
     }
 
@@ -38,7 +38,7 @@ public class BenefitChat {
 
     private String extractApplicant(String text) {
         Applicant applicant = extractor.extractApplicantFrom(text);
-        droolsMortgageCalculator.register(applicant);
+        benefitEligibilityCalculator.register(applicant);
         return applicant.toString();
     }
 }

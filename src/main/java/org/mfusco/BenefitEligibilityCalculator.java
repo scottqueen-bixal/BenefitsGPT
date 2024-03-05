@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DroolsMortgageCalculator {
+public class BenefitEligibilityCalculator {
 
     private final Map<String, Applicant> applicantRegistry = new HashMap<>();
 
     private final KieBase kieBase;
 
-    public DroolsMortgageCalculator() {
+    public BenefitEligibilityCalculator() {
         kieBase = new KieHelper().addFromClassPath("/mortgage.drl").build(ExecutableModelProject.class);
     }
 
