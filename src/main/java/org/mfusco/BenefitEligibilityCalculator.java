@@ -37,7 +37,7 @@ public class BenefitEligibilityCalculator {
         kieSession.fireAllRules();
 
         if (answers.isEmpty()) {
-            return "Yes, the applicant is eligible.";
+            return "Yes, the applicant is likely eligible";
         }
         return "The applicant is not eligible for the benefit because " + answers;
     }
