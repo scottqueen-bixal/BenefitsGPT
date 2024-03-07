@@ -1,0 +1,36 @@
+package org.mfusco;
+
+import org.mfusco.Applicant
+import org.mfusco.BenefitMetaData
+import java.sql.Date;
+
+global java.util.List answers;
+
+// The deceased worked and paid Social Security taxes
+// The deceased died within the last two years
+// You are a U.S. citizen or eligible non-citizen
+// Your relationship to the deceased is: spouse or child
+
+rule CheckSocialSecurity when
+	$p: Applicant($p.deceasedPaidSocialSecurityTaxes() == false)
+then
+	answers.add( "The deceased did not pay Social Security taxes." );
+end
+
+rule CheckDeath when
+	$p: Applicant(death > 2)
+then
+	answers.add( "The deceased death was not within the last two years." );
+end
+
+rule CheckCitizenshipStatus when
+	$p: Applicant($p.applicantCitizenStatus() == false)
+then
+	answers.add( "The applicant is not a U.S. citizen." );
+end
+
+rule CheckFuneralExpenses when
+	$p: Applicant( $p.applicantPaidFuneralExpenses() == true &&  applicantReimbursedFuneralExpenses() == true )
+then
+	answers.add( "Paid for funeral expenses, but allready got reimbursed." );
+end
