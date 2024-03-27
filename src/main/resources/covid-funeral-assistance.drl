@@ -1,7 +1,6 @@
 package org.mfusco;
 
 import org.mfusco.Applicant
-import org.mfusco.BenefitMetaData
 import java.sql.Date;
 
 global java.util.List answers;
@@ -12,31 +11,31 @@ global java.util.List answers;
 // You are a U.S. citizen or eligible non-citizen
 // You paid for funeral or burial expenses and were not reimbursed
 
-rule CheckCovid when
-	$p: Applicant( $p.(deceasedDiedFromCovid) == false )
+rule CovidCheckCovid when
+	$p: Applicant( $p.deceasedDiedFromCovid() == false )
 then
 	answers.add( "The deceased's death was not COVID-19 related." );
 end
 
-rule CheckDeathLocation when
+rule CovidCheckDeathLocation when
 	$p: Applicant( $p.deceasedDiedInUs() == false )
 then
 	answers.add( "The deceased did not die in the U.S." );
 end
 
-rule CheckDateOfDeath when
+rule CovidCheckDateOfDeath when
 	$p: Applicant( Date.valueOf($p.deceasedDateOfDeath) < Date.valueOf("2020-05-20") )
 then
 	answers.add( "The deceased died before May 20th, 2020." );
 end
 
-rule CheckCitizenshipStatus when
+rule CovidCheckCitizenshipStatus when
 	$p: Applicant( $p.applicantCitizenStatus() == false )
 then
 	answers.add( "The applicant is not a U.S. citizen." );
 end
 
-rule CheckFuneralExpenses when
+rule CovidCheckFuneralExpenses when
 	$p: Applicant( $p.applicantPaidFuneralExpenses() == true &&  applicantReimbursedFuneralExpenses() == true)
 then
 	answers.add( "The applicant Paid for funeral expenses, but allready got reimbursed." );
