@@ -1,7 +1,5 @@
 package org.mfusco;
 
-import dev.langchain4j.agent.tool.Tool;
-import dev.langchain4j.service.V;
 import org.drools.model.codegen.ExecutableModelProject;
 import org.kie.api.KieBase;
 import org.kie.api.runtime.KieSession;
@@ -21,13 +19,11 @@ public class BenefitEligibilityCalculator {
     public BenefitEligibilityCalculator() {
         KieHelper kieHelper = new KieHelper();
         kieBase = kieHelper
-                // .addFromClassPath("/covid-funeral-assistance.drl")
-                .addFromClassPath("/lump-sum-death-benefit.drl")
+                .addFromClassPath("/covid-funeral-assistance.drl")
                 .build(ExecutableModelProject.class);
     }
 
-    @Tool("Apply benefit eligibility to {{name}}")
-    public String benefitEligibility(@V("name") String name) {
+    public String benefitEligibility(String name) {
         Applicant applicant = applicantRegistry.get(name);
 
         if (applicant == null) {
@@ -37,13 +33,14 @@ public class BenefitEligibilityCalculator {
         KieSession kieSession = kieBase.newKieSession();
         List<String> answers = new ArrayList<>();
         kieSession.setGlobal("answers", answers);
+
         kieSession.insert(applicant);
         kieSession.fireAllRules();
 
         if (answers.isEmpty()) {
-            return "Yes, the applicant is likely eligible";
+            return "Yes, " + applicant.getFullName() + " is likely eligible for Covid funeral assistance";
         }
-        return "The applicant is not eligible for the benefit because " + answers;
+        return "" + applicant.getFullName() + " is not eligible for Covid funeral assistance because " + answers;
     }
 
     public void register(Applicant applicant) {
