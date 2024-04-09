@@ -5,6 +5,16 @@ This is a forked [example](link) that combines OpenAI and the Drools rules engin
 # Resources
 - A short list of [requirements](./REQUIREMENTS.md) consideration for future implementation.
 
+## Example
+
+How can I help you today? > Am I eligible for COVID benefits?
+
+<!-- likely-eligible -->
+My name is Jon Doe and I am 42 years old citizen of the US. My wife, who worked as a doctor, died while visiting her mother in Texas from COVID during the second year of the pandemic. I paid for the funeral expenses, but never filed for reimbursement.
+
+<!-- not-eligible -->
+My name is Jon Doe and I was born in Sudan, but I have a dual citizenship including U.S. I turned 72 yesterday. My wife died while visiting her mother in Texas from COVID during the first year of the pandemic. Scott paid for the funeral expenses and was reimbursement.
+
 ## Original Post
 
 ### Power is nothing without control
