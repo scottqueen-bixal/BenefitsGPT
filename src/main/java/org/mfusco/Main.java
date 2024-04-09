@@ -9,14 +9,14 @@ public class Main {
         BenefitChat benefitChat = new BenefitChat(args[0]);
 
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("> ");
+            System.out.print("\r\nHow can I help you today? > ");
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 if (line.equalsIgnoreCase("quit") || line.equalsIgnoreCase("exit")) {
                     break;
                 }
-                System.out.println( benefitChat.chat(line) );
-                System.out.print("> ");
+                System.out.println("\r\n" + benefitChat.chat(line) +"");
+                System.out.print("\r\n> ");
             }
         }
     }
