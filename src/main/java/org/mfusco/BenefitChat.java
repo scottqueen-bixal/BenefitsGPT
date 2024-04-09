@@ -39,6 +39,7 @@ public class BenefitChat {
     private String extractApplicant(String text) {
         Applicant applicant = extractor.extractApplicantFrom(text);
         benefitEligibilityCalculator.register(applicant);
-        return applicant.toString();
+        System.out.print("\r\n " + applicant.toString() + "\r\n");
+        return benefitEligibilityCalculator.benefitEligibility(applicant.applicantFirstName());
     }
 }
