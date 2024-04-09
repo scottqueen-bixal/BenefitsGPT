@@ -3,12 +3,6 @@ package org.mfusco;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-// likely-eligible
-// The applicant Scott Queen was born in the US. He turned 42 yesterday. His wife, who worked as a doctor, died while visiting her mother in Texas from COVID during the second year of the pandemic. He is now caring for a special needs child who was born three years before his wife died. Scott paid for the funeral expenses, but never filed for reimbursement.
-
-// not-eligible
-// The applicant Scott Queen was born in Sudan, but has dual citizenship including U.S. He turned 72 yesterday. His wife died while visiting her mother in Texas from COVID during the first year of the pandemic. He is now caring for a child who was born one year before his wife died. Scott paid for the funeral expenses and was reimbursement.
-
 public record Applicant(
         String applicantFirstName,
         String applicantLastName,
@@ -18,13 +12,9 @@ public record Applicant(
         Boolean applicantCitizenStatus,
         Boolean applicantPaidFuneralExpenses,
         Boolean applicantReimbursedFuneralExpenses,
-        Boolean deceasedPaidSocialSecurityTaxes,
         LocalDate deceasedDateOfDeath,
         Boolean deceasedDiedInUs,
-        Boolean deceasedDiedFromCovid,
-        Boolean applicantCaringForChild,
-        Boolean childDisabled,
-        LocalDate childAge) {
+        Boolean deceasedDiedFromCovid) {
 
     @Override
     public String toString() {
@@ -37,13 +27,9 @@ public record Applicant(
                 ", applicantCitizenStatus = " + applicantCitizenStatus +
                 ", applicantPaidFuneralExpenses = " + applicantPaidFuneralExpenses +
                 ", applicantReimbursedFuneralExpenses = " + applicantReimbursedFuneralExpenses +
-                ", deceasedDiedInUs = " + deceasedDiedInUs +
-                ", deceasedPaidSocialSecurityTaxes = " + deceasedPaidSocialSecurityTaxes +
-                ", deceasedDiedFromCovid = " + deceasedDiedFromCovid +
                 ", deceasedDateOfDeath = " + deceasedDateOfDeath +
-                ", applicantCaringForChild = " + applicantCaringForChild +
-                ", childDisabled = " + childDisabled +
-                ", childAge = " + childAge +
+                ", deceasedDiedInUs = " + deceasedDiedInUs +
+                ", deceasedDiedFromCovid = " + deceasedDiedFromCovid +
                 " }";
     }
 
