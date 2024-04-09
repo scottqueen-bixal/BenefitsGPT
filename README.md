@@ -1,4 +1,13 @@
-# Power is nothing without control
+# About
+
+This is a forked [example](link) that combines OpenAI and the Drools rules engine to prototype leveraging LLM systems with ChatGPT like interactions which are focused on providing benefits eligibility results to users.
+
+# Resources
+- A short list of [requirements](./REQUIREMENTS.md) consideration for future implementation.
+
+## Original Post
+
+### Power is nothing without control
 
 What you can do nowadays with LLM systems like ChatGPT is simply mind-blowing. I must admit that I cannot stop being surprised and from time to time literally jumping from my seat thinking: "I didn't imagine that AI could do ALSO this!". What is a bit misleading here is that what we now call and tend to identify with Artificial Intelligence is actually Deep Learning which is only a subset of all AI technologies available.
 
@@ -6,17 +15,17 @@ What you can do nowadays with LLM systems like ChatGPT is simply mind-blowing. I
 
 In other words Deep Learning is only a fraction of the whole AI-story. Moreover there are many situations where being surprised is the last thing that you may want. You don't want to jump from your seat when your bank refuses to concede you a mortgage without any human understandable or trackable reason, but only because an LLM said no. And even the bank may want to grant their mortgages only to applicants who are considered viable under their strict, well-defined and not questionable business rules.
 
-In essence, the power and flexibility that a well-trained Deep Learning model gives you is virtually infinite, but often, at least in some parts of your application, what you need is more confined control to make it adhere to your business domain and rules. 
+In essence, the power and flexibility that a well-trained Deep Learning model gives you is virtually infinite, but often, at least in some parts of your application, what you need is more confined control to make it adhere to your business domain and rules.
 
-## Combining LLM flexibility and rule engine predictability
+#### Combining LLM flexibility and rule engine predictability
 
 Given these premises why not mixing 2 very different and complementary AI branches like deep learning and symbolic reasoning? Moving forward with the mortgage example, this will give us a chance to implement an application with the corporate rigor required by the strict business rules of a bank, but queryable in the most human friendly possible way.
 
 In this very straightforward sample project, this has been achieved using a rule engine like [Drools](https://www.drools.org/) to encode the [simple business rules](https://github.com/mariofusco/droolsGPT/blob/main/src/main/resources/mortgage.drl) used by our imaginary bank to evaluate mortgage applications. Through the abstraction layer offered by [langchain4j](https://github.com/langchain4j/langchain4j) API, this has been combined with ChatGPT in order to allow the interaction with our cold and inflexible business rules in the smoothest  and less structured possible way.
 
-## Running the project
+#### Running the project
 
-If you want to give a run on your own to this project you need to pass to the Main class your [ChatGPT API key](https://platform.openai.com/account/api-keys). 
+If you want to give a run on your own to this project you need to pass to the Main class your [ChatGPT API key](https://platform.openai.com/account/api-keys).
 
 When the prompt appears you can first try to describe the applicant very informally, something like
 
@@ -60,7 +69,7 @@ Of course this time asking if Sofia can also get a mortgage
 > Possiamo dare un mutuo a Sofia?
 ```
 
-we will receive a negative answer as expected 
+we will receive a negative answer as expected
 
 ```
 No, a mortgage cannot be granted for Sofia. This is because Sofia is too young and her income is too low.
