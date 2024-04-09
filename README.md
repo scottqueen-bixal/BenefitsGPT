@@ -5,7 +5,7 @@ This is a forked [example](link) that combines OpenAI and the Drools rules engin
 # Resources
 - A short list of [requirements](./REQUIREMENTS.md) consideration for future implementation.
 
-## Example
+# Example
 
 How can I help you today? > Am I eligible for COVID benefits?
 
