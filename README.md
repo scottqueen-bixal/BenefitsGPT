@@ -47,7 +47,7 @@ Extracted Applicant
  Applicant {
   applicantFirstName = "Jon",
   applicantLastName = "Doe",
-  applicantBirthDate = "1951-01-01",
+  applicantBirthDate = "1951-04-08",
   applicantRelationshipToDeceased = "Spouse",
   applicantMaritalStatus = "Widowed",
   applicantCitizenStatus = true,
