@@ -59,7 +59,7 @@ Extracted Applicant
  }
 ```
 
-> Jon Doe is not eligible for Covid funeral assistance because [The applicant Paid for funeral expenses, but all ready got reimbursed.]
+> Jon Doe is not eligible for Covid funeral assistance because [The applicant Paid for funeral expenses, but already got reimbursed.]
 
 
 ## Original Post
