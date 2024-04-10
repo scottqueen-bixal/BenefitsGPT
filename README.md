@@ -47,19 +47,19 @@ Extracted Applicant
  Applicant {
   applicantFirstName = "Jon",
   applicantLastName = "Doe",
-  applicantBirthDate = "1951-12-31",
+  applicantBirthDate = "1951-01-01",
   applicantRelationshipToDeceased = "Spouse",
   applicantMaritalStatus = "Widowed",
   applicantCitizenStatus = true,
   applicantPaidFuneralExpenses = true,
   applicantReimbursedFuneralExpenses = true,
-  deceasedDateOfDeath = "2022-03-15",
+  deceasedDateOfDeath = "2020-04-15",
   deceasedDiedInUs = true,
   deceasedDiedFromCovid = true
- }
+}
 ```
 
-> Jon Doe is not eligible for Covid funeral assistance because [The applicant Paid for funeral expenses, but already got reimbursed.]
+> Jon Doe is not eligible for Covid funeral assistance because [The deceased died before May 20th, 2020., The applicant Paid for funeral expenses, but already got reimbursed.]
 
 
 ## Original Post
