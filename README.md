@@ -7,13 +7,60 @@ This is a forked [example](link) that combines OpenAI and the Drools rules engin
 
 # Example
 
-How can I help you today? > Am I eligible for COVID benefits?
+"Likely eligible"
 
-"likely eligible" </br>
-My name is Jon Doe and I am 42 years old citizen of the US. My wife, who worked as a doctor, died while visiting her mother in Texas from COVID during the second year of the pandemic. I paid for the funeral expenses, but never filed for reimbursement.
 
-"Not-eligible" </br>
-My name is Jon Doe and I was born in Sudan, but I have a dual citizenship including U.S. I turned 72 yesterday. My wife died while visiting her mother in Texas from COVID during the first year of the pandemic. Scott paid for the funeral expenses and was reimbursement.
+> How can I help you today? > Am I eligible for COVID benefits?
+
+> Can you provide me your name and details about your specific situation.
+
+> My name is Jon Doe and I am 42 years old citizen of the US. My wife, who worked as a doctor, died while visiting her mother in Texas from COVID during the second year of the pandemic. I paid for the funeral expenses, but never filed for reimbursement.
+
+Extracted Applicant
+
+```JSON
+ Applicant {
+    applicantFirstName = "Jon",
+    applicantLastName = "Doe",
+    applicantBirthDate = "1981-12-31",
+    applicantRelationshipToDeceased = "Spouse",
+    applicantMaritalStatus = "Widowed",
+    applicantCitizenStatus = true,
+    applicantPaidFuneralExpenses = true,
+    applicantReimbursedFuneralExpenses = false,
+    deceasedDateOfDeath = "2023-12-31",
+    deceasedDiedInUs = true,
+    deceasedDiedFromCovid = true
+  }
+ ```
+
+> Yes, Jon Doe is likely eligible for Covid funeral assistance
+
+
+"Not eligible"
+
+> My name is Jon Doe and I was born in Sudan, but I have a dual citizenship including U.S. I turned 72 yesterday. My wife died while visiting her mother in Texas from COVID during the first year of the pandemic. Scott paid for the funeral expenses and was reimbursement.
+
+Extracted Applicant
+
+```JSON
+ Applicant {
+  applicantFirstName = "Jon",
+  applicantLastName = "Doe",
+  applicantBirthDate = "1951-12-31",
+  applicantRelationshipToDeceased = "Spouse",
+  applicantMaritalStatus = "Widowed",
+  applicantCitizenStatus = true,
+  applicantPaidFuneralExpenses = true,
+  applicantReimbursedFuneralExpenses = true,
+  deceasedDateOfDeath = "2022-04-15",
+  deceasedDiedInUs = true,
+  deceasedDiedFromCovid = true
+ }
+```
+
+> Jon Doe is not eligible for Covid funeral assistance because [The applicant Paid for funeral expenses, but allready got reimbursed.]
+
 
 ## Original Post
 
