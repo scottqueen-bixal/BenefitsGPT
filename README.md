@@ -53,7 +53,7 @@ Extracted Applicant
   applicantCitizenStatus = true,
   applicantPaidFuneralExpenses = true,
   applicantReimbursedFuneralExpenses = true,
-  deceasedDateOfDeath = "2022-04-15",
+  deceasedDateOfDeath = "2022-03-15",
   deceasedDiedInUs = true,
   deceasedDiedFromCovid = true
  }
