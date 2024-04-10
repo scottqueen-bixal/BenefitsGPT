@@ -39,7 +39,7 @@ Extracted Applicant
 
 "Not eligible"
 
-> My name is Jon Doe and I was born in Sudan, but I have a dual citizenship including U.S. I turned 72 yesterday. My wife died while visiting her mother in Texas from COVID during the first year of the pandemic. Scott paid for the funeral expenses and was reimbursement.
+> My name is Jon Doe and I was born in Sudan, but I have a dual citizenship including U.S. I turned 72 yesterday. My wife died while visiting her mother in Texas from COVID during the first year of the pandemic. I paid for the funeral expenses and was reimbursed.
 
 Extracted Applicant
 
