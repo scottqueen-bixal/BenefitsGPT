@@ -18,7 +18,7 @@ This is a forked [example](link) that combines OpenAI and the Drools rules engin
 
 Extracted Applicant
 
-```JSON
+```
  Applicant {
     applicantFirstName = "Jon",
     applicantLastName = "Doe",
@@ -43,7 +43,7 @@ Extracted Applicant
 
 Extracted Applicant
 
-```JSON
+```
  Applicant {
   applicantFirstName = "Jon",
   applicantLastName = "Doe",
