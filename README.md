@@ -59,7 +59,7 @@ Extracted Applicant
 }
 ```
 
-> Jon Doe is not eligible for Covid funeral assistance because [The deceased died before May 20th, 2020., The applicant Paid for funeral expenses, but already got reimbursed.]
+> Jon Doe is not eligible for Covid funeral assistance because [The deceased died before May 20th, 2020., The applicant paid for funeral expenses, but already got reimbursed.]
 
 
 ## Original Post

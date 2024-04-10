@@ -38,5 +38,5 @@ end
 rule CovidCheckFuneralExpenses when
 	$p: Applicant( $p.applicantPaidFuneralExpenses() == true &&  applicantReimbursedFuneralExpenses() == true)
 then
-	answers.add( "The applicant Paid for funeral expenses, but allready got reimbursed." );
+	answers.add( "The applicant paid for funeral expenses, but already got reimbursed." );
 end
